@@ -1,12 +1,17 @@
 package ohm.softa.a03;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class DeathState extends State{
-    DeathState(int duration) {
-        super(duration);
+    private static final Logger logger = LogManager.getLogger();
+    DeathState() {
+        super(1);
     }
 
     @Override
-    State successor(Cat cat) {
+    public State successor(Cat cat) {
+        // no lives left...
         return this;
     }
 }
